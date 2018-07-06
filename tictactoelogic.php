@@ -65,12 +65,13 @@ foreach ($allFields as $field){
 /**
  * Generate a random number and play that field
  */
-
-$computerPlayedField = rand (1 , count($allFields)) - 1;
-
-$fieldToBePlayed = $allFieldNames[$computerPlayedField];
-$singleFields[$fieldToBePlayed] = 'o';
-
+if ($allFields != []) {
+    $computerPlayedField = rand(1, count($allFields)) - 1;
+}
+if (isset($computerPlayedField)) {
+    $fieldToBePlayed = $allFieldNames[$computerPlayedField];
+    $singleFields[$fieldToBePlayed] = 'o';
+}
 /**
  * Check if a player won or not
  */
